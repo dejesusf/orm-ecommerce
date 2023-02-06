@@ -10,12 +10,6 @@ class Product extends Model {}
 Product.init(
   {
     // define columns
-    id: {
-      type: DataTypes.INTEGER,
-      autoIncrement: true,
-      allowNull: false,
-      primaryKey: true,
-    },
     productName: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -35,9 +29,14 @@ Product.init(
         isNumeric: true,
       }
     },
+    categoryId: {
+      type: DataTypes.INTEGER,
+    },
   },
   {
     sequelize,
+    freezeTableName: true,
+    underscored: true,
     modelName: 'product',
   }
 );
