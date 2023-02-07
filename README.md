@@ -3,7 +3,7 @@
 ## Description
 With MySQL and Sequelize, this database application can be used to manage inventory and purchases for e-commerce websites. Since there isn't any front-end code, apps like Insomnia would need to be used to view this locally. A video walkthrough of this application is availabe under [Usage](#usage).
 
-I was able to get through most of this assignment pretty smoothly. I ran into most of my bugs towards the end when I tested my routes in Insomnia. I tried to let sequelize do its thing but ended up defining the primary keys for each table. After that, the routes seemed to have worked.
+There is an issue with the 'create' and 'update' product routes. When done, Insomnia gives me a 400 Bad Request error but still creates and updates the product entered. This might be due to the category and category_id reading as null. This will be debugged in the future but for now, everything works as expected.
 
 ## Table of Contents
 - [License](#license)
@@ -24,7 +24,7 @@ Upon copying this repo, please install express, mysql2, sequelize, and dotenv.
 6. Run 'node server.js' to begin.
     
 ## Usage
-Here is a video demonstration on how to use this application after it has been properly installed.
+Since the file size is larger than GitHub's max capacity, here is a [video demonstration](https://drive.google.com/file/d/1LefxpPBqFj2-qXPRwxffLJ94cI_t86Rj/view?usp=sharing) on how to use this application after it has been properly installed.
 
 ## Questions
 If there any questions, feel free to [email me](mailto:dejesusf@uw.edu). Don't be shy and visit my [GitHub Profile](https://github.com/dejesusf) to see other projects I'm working on.
