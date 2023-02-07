@@ -39,7 +39,7 @@ router.put('/:id', (req, res) => {
       id: req.params.id
     }
   }).then(data => {
-    res.json('category has been created')
+    res.json('category has been updated')
   })
 });
 
@@ -50,7 +50,7 @@ router.delete('/:id', (req, res) => {
       id: req.params.id
     }
   }).then(data => {
-    res.json('category has been created')
+    res.json('category has been deleted')
   })
 });
 
