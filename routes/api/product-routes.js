@@ -18,7 +18,7 @@ router.get('/', (req, res) => {
 router.get('/:id', (req, res) => {
   // find a single product by its `id`
   // be sure to include its associated Category and Tag data
-  Product.findAll({
+  Product.findOne({
     where: {
       id: req.params.id
     }, include: [Category, Tag]
@@ -52,7 +52,7 @@ router.post('/', (req, res) => {
       // if no product tags, just respond
       res.status(200).json(product);
     })
-    .then((productTagIds) => res.status(200).json(productTagIds))
+    .then((productTagIds) => res.status(200).json('product has been created'))
     .catch((err) => {
       console.log(err);
       res.status(400).json(err);
@@ -94,7 +94,7 @@ router.put('/:id', (req, res) => {
         ProductTag.bulkCreate(newProductTags),
       ]);
     })
-    .then((updatedProductTags) => res.json(updatedProductTags))
+    .then((updatedProductTags) => res.json('product has been updated'))
     .catch((err) => {
       // console.log(err);
       res.status(400).json(err);
@@ -108,7 +108,7 @@ router.delete('/:id', (req, res) => {
       id: req.params.id
     }
   }).then(product => {
-    res.json(product)
+    res.json('product has been deleted')
   })
 });
 

@@ -8,7 +8,7 @@ router.get('/', (req, res) => {
   // be sure to include its associated Products
   Category.findAll({
     include: [Product]
-  }).then(data=>{
+  }).then(data => {
     res.json(data)
   })
 });
@@ -16,7 +16,9 @@ router.get('/', (req, res) => {
 router.get('/:id', (req, res) => {
   // find one category by its `id` value
   // be sure to include its associated Products
-  Category.findByPk(req.params.id, {include: [Product]}).then(data=> {
+  Category.findByPk(req.params.id, {
+    include: [Product]
+  }).then(data => {
     res.json(data)
   })
 });
@@ -24,7 +26,7 @@ router.get('/:id', (req, res) => {
 router.post('/', (req, res) => {
   // create a new category
   Category.create(req.body).then(data => {
-    res.json(data)
+    res.json('new category has been created');
   })
 });
 
@@ -34,10 +36,10 @@ router.put('/:id', (req, res) => {
     category_name: req.body.category_name,
   },{
     where: {
-      id:req.params.id
+      id: req.params.id
     }
   }).then(data => {
-    res.json(data)
+    res.json('category has been created')
   })
 });
 
@@ -48,7 +50,7 @@ router.delete('/:id', (req, res) => {
       id: req.params.id
     }
   }).then(data => {
-    res.json(data)
+    res.json('category has been created')
   })
 });
 

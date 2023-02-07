@@ -29,7 +29,7 @@ router.get('/:id', (req, res) => {
 router.post('/', (req, res) => {
   // create a new tag
   Tag.create(req.body).then(data => {
-    res.json(data)
+    res.json('new tag has been created')
   })
 });
 
@@ -42,7 +42,7 @@ router.put('/:id', (req, res) => {
       id: req.params.id
     }
   }).then(data => {
-    res.json(data)
+    res.json('tag has been updated')
   })
 });
 
@@ -53,7 +53,7 @@ router.delete('/:id', (req, res) => {
       id: req.params.id
     }
   }).then(data => {
-    res.json(data)
+    res.json('tag has been deleted')
   })
 });
 
